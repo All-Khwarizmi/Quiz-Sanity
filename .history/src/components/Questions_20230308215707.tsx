@@ -2,7 +2,7 @@ import React from 'react'
 
 const Questions = ({data}: any) => {
     if (!data) {
-        return "Loading..."
+        return 
     }
   return (
     <div className='flex space-x-3 h-full '>
