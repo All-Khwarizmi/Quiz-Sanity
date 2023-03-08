@@ -13,7 +13,7 @@ import { FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa';
 
 
 export const Footer = () => (
-  <Container className='bg-gray-200 text-black bottom-0 relative w-screen' as='footer' role='contentinfo'>
+  <Container className='bg-gray-200 text-black bottom-0 relative' as='footer' role='contentinfo'>
     <Stack
       spacing='8'
       direction={{ base: 'column', md: 'row' }}
