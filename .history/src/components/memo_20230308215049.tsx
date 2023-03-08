@@ -19,7 +19,7 @@ const  Memo = async (  ) => {
         <button type='button' className='p-3 bg-gray-300 rounded'>
           Fetch
         </button>
-       <Questions data={data} />
+       <Questions />
       </div>
     </section>
   );

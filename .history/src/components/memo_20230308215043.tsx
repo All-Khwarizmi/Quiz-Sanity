@@ -2,7 +2,6 @@
 import React from 'react';
 import { fetcher } from '@/lib/fetcher';
 import Question from '../../schemas/question';
-import Questions from './Questions';
 
 const  Memo = async (  ) => {
    const data = await getData()
@@ -19,7 +18,7 @@ const  Memo = async (  ) => {
         <button type='button' className='p-3 bg-gray-300 rounded'>
           Fetch
         </button>
-       <Questions data={data} />
+       <Question
       </div>
     </section>
   );
