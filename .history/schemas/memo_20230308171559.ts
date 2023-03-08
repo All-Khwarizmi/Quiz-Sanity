@@ -1,0 +1,1 @@
+https://www.npmjs.com/package/next-sanity?activeTab=readme#next-sanitystudio
