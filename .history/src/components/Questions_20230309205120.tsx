@@ -1,4 +1,4 @@
-const Questions = (data : Data) => {
+const Questions = (data : Memo[]) => {
   console.log("DATA", data)
   if (!data) {
     return 'Loading...';

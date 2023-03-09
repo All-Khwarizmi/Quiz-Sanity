@@ -1,11 +1,11 @@
-const Questions = (data : Data) => {
+const Questions = (data : Memo[]) => {
   console.log("DATA", data)
   if (!data) {
     return 'Loading...';
   }
   return (
     <div className=' w-full h-full '>
-      {data.data.map((item, index: number) => {
+      {data.map((item, index: number) => {
         return (
           <div className=' text-center bg-gray-300' key={item._id}>
             <p className='font-bold'>Title</p>

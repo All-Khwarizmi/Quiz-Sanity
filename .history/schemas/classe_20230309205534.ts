@@ -19,7 +19,7 @@ export default defineType({
       name: 'memo',
       title: 'Memo',
       type: 'array',
-      of: [{ type: 'reference', to: { type: 'memo' } }],
+      of: [{ type: 'reference', to: { type: 'category' } }],
     }),
     defineField({
       name: 'image',

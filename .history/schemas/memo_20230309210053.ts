@@ -14,7 +14,7 @@ export default defineType({
       name: 'classe',
       title: 'Classe',
       type: 'array',
-      of: [ { type: 'classe' } ],
+      of: [ { type: 'classe' } }],
     }),
     defineField({
       name: 'slug',

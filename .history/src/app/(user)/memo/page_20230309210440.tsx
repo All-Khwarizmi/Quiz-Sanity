@@ -1,15 +1,16 @@
 import React, { cache } from 'react';
-import { client } from '../../../../lib/sanity.client';
+import Questions from '@/components/Questions';
 import { groq } from 'next-sanity';
-
+import { client } from '../../../../lib/sanity.client';
+// Enable NextJS to cache and dedupe queries
+const clientFetch = cache(client.fetch.bind(client))
 const query = groq` 
 *
 [_type == "memo"]
 `;
-// Enable NextJS to cache and dedupe queries
-const clientFetch = cache(client.fetch.bind(client));
-
-const page = () => {
+const page = async ({ params }: any) => {
+  const data: Data = await clientFetch(query);
+  // console.log(data, query)
   return (
     <main className='min-h-screen w-screen relative'>
       <h1 className='text-center py-20'>Grid of all categories</h1>
@@ -34,3 +35,7 @@ const page = () => {
 };
 
 export default page;
+
+/*  @ts-expect-error Async Server Component
+   <Questions data={data} />
+*/
