@@ -23,7 +23,7 @@ const page = async ({ params }: any) => {
   const data: AllMemos[] = await clientFetch(ALLMEMOS);
   //const className = await clientFetch(SINGLECLASS, {title: '402'}) 
   // console.log("Class", className);
-   // console.log(data[0].image)
+   console.log(data[0].image)
   return (
     <main className='min-h-screen w-screen relative'>
       <h1 className='text-center py-20'>Grid of all memos</h1>

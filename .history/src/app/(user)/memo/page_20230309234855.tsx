@@ -14,16 +14,11 @@ const query = groq`
 *
 [_type == "memo"]
 `;
-
-//TODO: 
-    // Query all memos of one single class
-    // To do so make dynamic route that has class name
-    // adjust image size to fit maybe crop it on sanity
 const page = async ({ params }: any) => {
   const data: AllMemos[] = await clientFetch(ALLMEMOS);
   //const className = await clientFetch(SINGLECLASS, {title: '402'}) 
   // console.log("Class", className);
-   // console.log(data[0].image)
+   console.log(data[0].image)
   return (
     <main className='min-h-screen w-screen relative'>
       <h1 className='text-center py-20'>Grid of all memos</h1>
@@ -35,8 +30,8 @@ const page = async ({ params }: any) => {
               <div className='border-2 m-0 border-gray-300 flex flex-col items-center rounded-lg'>
                 <Image
                 width={200}
-                height={200}
-                  className='w-full max-h-50'
+                height={}
+                  className='w-full'
                   src={`${memo.image.asset.url}`}
                   alt=''
                 />

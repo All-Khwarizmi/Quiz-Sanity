@@ -9,8 +9,7 @@ const query = groq`
 // Enable NextJS to cache and dedupe queries
 const clientFetch = cache(client.fetch.bind(client));
 // TODO :
-    // Fetch all classes
-    // change img => Image/next 
+    
 const page = () => {
   return (
     <main className='min-h-screen w-screen relative'>
