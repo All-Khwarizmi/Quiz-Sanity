@@ -13,18 +13,7 @@ const Questions = ({data}: any) => {
             <p className='font-bold'>Title</p>
             <p>{item.name}</p>
             <p className='font-bold'>Description</p>
-           
-          </div>
-        );
-      })}
-    </div>
-  );
-}
-
-export default Questions
-
-/* 
- <p>{item.description[indexO].children[indexO].text}</p>
+            <p>{item.description[indexO].children[indexO].text}</p>
             <p>{item.question[indexO].question[indexO].children[indexO].text}</p>
             {item.question.map((question: any) => {
               return (
@@ -33,4 +22,11 @@ export default Questions
                 </p>
               );
             })}
-*/
+          </div>
+        );
+      })}
+    </div>
+  );
+}
+
+export default Questions

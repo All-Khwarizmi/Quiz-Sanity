@@ -13,7 +13,10 @@ const Questions = ({data}: any) => {
             <p className='font-bold'>Title</p>
             <p>{item.name}</p>
             <p className='font-bold'>Description</p>
-           
+        
+                </p>
+              );
+            })}
           </div>
         );
       })}
@@ -22,15 +25,3 @@ const Questions = ({data}: any) => {
 }
 
 export default Questions
-
-/* 
- <p>{item.description[indexO].children[indexO].text}</p>
-            <p>{item.question[indexO].question[indexO].children[indexO].text}</p>
-            {item.question.map((question: any) => {
-              return (
-                <p key={question._key}>
-                  {question.question[indexO].children[indexO].text}
-                </p>
-              );
-            })}
-*/
