@@ -1,7 +1,7 @@
-
+import React from 'react'
 
 const Questions = ({data}: any) => {
-   
+    const indexO: number = 0
     if (!data) {
         return "Loading..."
     }
@@ -13,14 +13,7 @@ const Questions = ({data}: any) => {
             <p className='font-bold'>Title</p>
             <p>{item.name}</p>
             <p className='font-bold'>Description</p>
-            {item.question.map((question: any) => {
-               const indexO: number = 0;
-              return (
-                <p key={question._key}>
-                  {question.question[indexO].children[indexO].text}
-                </p>
-              );
-            })}
+           
           </div>
         );
       })}
