@@ -99,7 +99,7 @@ a {
   color: inherit;
   text-decoration: none;
 }
-.btn {
+btn {
   
 background: rgb(25,244,255);
 background: linear-gradient(180deg, rgba(25,244,255,1) 0%, rgba(7,42,159,1) 100%);

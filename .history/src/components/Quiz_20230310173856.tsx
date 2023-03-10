@@ -24,10 +24,10 @@ const Quiz = (quiz: QuizType) => {
             <div className='font-bold text-xl bg-red-600 uppercase border-2 rounded-lg py-5 px-3'>
               {quizRef.current.questions[0].answerA}
             </div>
-            <div className='font-bold text-xl btn uppercase border-2 rounded-lg py-5 px-3'>
+            <div className='font-bold text-xl  uppercase border-2 rounded-lg py-5 px-3'>
               {quizRef.current.questions[0].answerA}
             </div>
-            <div className='font-bold text-xl  uppercase border-2 rounded-lg py-5 px-3'>
+            <div className='font-bold text-xl bg-green-600 uppercase border-2 rounded-lg py-5 px-3'>
               {quizRef.current.questions[0].answerA}
             </div>
           </div>
