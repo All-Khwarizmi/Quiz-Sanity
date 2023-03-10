@@ -49,15 +49,7 @@ export default async function Home() {
         >
           QuizoO
         </h1>
-        <div className=' w-full flex justify-center items-center'>
-          <Link
-            id='btn'
-            href={'/grid'}
-            className='text-white top-20 left-25 font-bold py-2 px-3 rounded-lg text-xl bg-purple-800 relative btn'
-          >
-            ENTER
-          </Link>
-        </div>
+        <div></div>
       </main>
     </>
   );
