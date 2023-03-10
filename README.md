@@ -2,9 +2,21 @@
 # QuizoO
 **This is a remake of the QuizoO app with Sanity CMS**
 
+### Sanity studio
 [Boucher for sanity boost ](https://www.sanity.io/sonny)
+
 [Next-sanity for embeded studio (github) ](https://github.com/sanity-io/next-sanity#next-sanity-running-groq-queries)
+
 [Next-sanity for embeded studio ](https://www.npmjs.com/package/next-sanity?activeTab=readme#next-sanitystudio)
+
+[Studio customization docs](https://www.sanity.io/docs/customization)
+
+[Studio customization GUI](https://themer.sanity.build/?preset=rosabel&primary=ed2555;600&transparent=9d8966;600#/movies/desk)
+
+const {theme} = (await import(
+  // @ts-expect-error -- TODO setup themer.d.ts to get correct typings
+  'https://themer.sanity.build/api/hues?preset=rosabel&primary=ed2555;600&transparent=9d8966;600'
+)) as {theme: import('sanity').StudioTheme}
 
 ### Learn GROQ
 [Learn GROQ in 45 minutes ](https://hdoro.dev/learn-groq)
