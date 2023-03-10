@@ -13,7 +13,7 @@ const clientFetch = cache(client.fetch.bind(client));
     // change img => Image/next 
 const page = async () => {
   const data: AllClassImg = await clientFetch(ALLCLASSES)
-  // console.log(data.length, data[0].image.asset.url, data[0].title);
+  console.log(data.length, data[0].image.asset.url, data[0].title);
   return (
     <main className='min-h-screen w-screen relative'>
       <h1 className='text-center font-bold text-2xl uppercase py-20'>Classes</h1>
@@ -21,8 +21,11 @@ const page = async () => {
         <div className=' grid-col-1 grid md:grid md:grid-cols-3 gap-3 px-3'>
          {data.map(classe => {
           return (
-            <Link key={classe._id} href={`/memo/${classe.title}`}>
-              <div className='border-2 m-0 border-gray-300 rounded-lg'>
+            <Link  href={`/memo/${classe.title}`}>
+              <div
+               
+                className='border-2 m-0 border-gray-300 rounded-lg'
+              >
                 <img src={`${classe.image.asset.url}`} alt='' />
                 <p className='text-center font-bold py-3'>{classe.title}</p>
               </div>

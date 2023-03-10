@@ -1,10 +1,5 @@
 import { groq } from 'next-sanity';
-type ClassImg = {
-  _id: string
-  image: MemoImage
-  title: string
-}
-export type AllClassImg =  ClassImg[]
+
 export const ALLCLASSES = groq`
 *[_type == "classe"]{
   title,

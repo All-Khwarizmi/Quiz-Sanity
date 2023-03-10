@@ -1,6 +1,5 @@
 import { groq } from 'next-sanity';
 type ClassImg = {
-  _id: string
   image: MemoImage
   title: string
 }
