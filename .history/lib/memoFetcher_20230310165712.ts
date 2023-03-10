@@ -17,7 +17,7 @@ const clientFetch = cache(client.fetch.bind(client));
 export type MemoFetcher = (memo: string) => Promise<QuizType>;
 
 export const memoFetcher: MemoFetcher = async (memo) => {
- // console.log('Classe', memo);
+  console.log('Classe', memo);
   const data: Memo[] = await clientFetch(SINGLEMEMO, {
     name: memo,
   });
@@ -36,7 +36,7 @@ export const memoFetcher: MemoFetcher = async (memo) => {
     length: 0,
     memo,
   };
-  // console.log('Inside memoFetcher', quiz);
+  console.log('Inside memoFetcher', quiz);
 
   return quiz;
 };

@@ -22,7 +22,7 @@ const page = async ({ params }: Params) => {
   return (
     <>
       <main className='min-h-screen w-screen'>
-        <Quiz questions={quiz.questions} started={false} finished={false} points={0} malus={0} length={0} memo={quiz.memo}  />
+        <Quiz questions={quiz.questions} started={false} finished={false} points={0} malus={0} length={0} memo={quiz.}  />
       </main>
     </>
   );

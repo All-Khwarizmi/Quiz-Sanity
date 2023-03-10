@@ -1,28 +1,28 @@
-import Quiz from '@/components/Quiz';
+"use client"
 import { cache } from 'react';
-import { memoFetcher, QuizType } from '../../../../../../lib/memoFetcher';
+import { memoFetcher } from '../../../../../../lib/memoFetcher';
 import { client } from '../../../../../../lib/sanity.client';
 import { SINGLEMEMO } from '../../../../../../queries/queries';
 type Params = {
   params: { classe: string; memo: string };
-}
-type QuizProps = {
-  quiz: QuizType
-}
+};
+
 const clientFetch = cache(client.fetch.bind(client));
 const page = async ({ params }: Params) => {
   const newParams = {
     ...params,
     memo: params.memo.replace('%20', ' '),
   };
-  let quiz: QuizType= await memoFetcher(newParams.memo);
+  let quiz = await memoFetcher(newParams.memo);
+  //let quizRef =useRef(quiz)
 
+ // console.log('QuizRef', quizRef);
   //console.log('Quiz', quiz.questions);
   // console.log('Questions', data[0].question);
   return (
     <>
       <main className='min-h-screen w-screen'>
-        <Quiz questions={quiz.questions} started={false} finished={false} points={0} malus={0} length={0} memo={quiz.memo}  />
+        <div>Question page</div>
       </main>
     </>
   );

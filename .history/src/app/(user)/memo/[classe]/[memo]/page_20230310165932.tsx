@@ -15,14 +15,14 @@ const page = async ({ params }: Params) => {
     ...params,
     memo: params.memo.replace('%20', ' '),
   };
-  let quiz: QuizType= await memoFetcher(newParams.memo);
+  let {quiz}: QuizProps= await memoFetcher(newParams.memo);
 
   //console.log('Quiz', quiz.questions);
   // console.log('Questions', data[0].question);
   return (
     <>
       <main className='min-h-screen w-screen'>
-        <Quiz questions={quiz.questions} started={false} finished={false} points={0} malus={0} length={0} memo={quiz.memo}  />
+        <Quiz quiz={quiz} />
       </main>
     </>
   );

@@ -10,24 +10,24 @@ export type QuizType = {
   points: number;
   malus: number;
   length: number;
-  memo: string;
+  memo: string
 };
-const clientFetch = cache(client.fetch.bind(client));
-
-export type MemoFetcher = (memo: string) => Promise<QuizType>;
+  const clientFetch = cache(client.fetch.bind(client));
+  
+export type MemoFetcher = (memo: string) => Promise<Quiz>;
 
 export const memoFetcher: MemoFetcher = async (memo) => {
- // console.log('Classe', memo);
+console.log("Classe", memo)
   const data: Memo[] = await clientFetch(SINGLEMEMO, {
     name: memo,
   });
   // console.log('Data in memoFetcher', data);
   let questions = data.map((item) => {
-    //  console.log('Inside Map in memoFetcher', item.question);
+   //  console.log('Inside Map in memoFetcher', item.question);
     return item.question.map((question) => question);
   });
-  let questionArr = quizExtractor(questions);
-  let quiz: QuizType = {
+  let questionArr = quizExtractor(questions)
+  let quiz: Quiz = {
     questions: questionArr,
     started: false,
     finished: false,
@@ -36,7 +36,7 @@ export const memoFetcher: MemoFetcher = async (memo) => {
     length: 0,
     memo,
   };
-  // console.log('Inside memoFetcher', quiz);
+  console.log('Inside memoFetcher', quiz);
 
   return quiz;
 };

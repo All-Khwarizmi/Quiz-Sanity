@@ -36,7 +36,7 @@ export const memoFetcher: MemoFetcher = async (memo) => {
     length: 0,
     memo,
   };
-  // console.log('Inside memoFetcher', quiz);
+  console.log('Inside memoFetcher', quiz);
 
   return quiz;
 };
