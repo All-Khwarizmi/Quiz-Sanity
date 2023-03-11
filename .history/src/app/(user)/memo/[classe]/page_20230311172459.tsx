@@ -44,7 +44,7 @@ const page = async ({ params }: Params) => {
                       <Image
                         width={200}
                         height={200}
-                        className='w-full h-72'
+                        className='w-full max-h-50'
                         src={`${memo.image.asset.url}`}
                         alt=''
                       />
