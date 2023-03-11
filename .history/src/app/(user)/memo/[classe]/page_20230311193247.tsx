@@ -13,6 +13,7 @@ type Params = {
 // Enable NextJS to cache and dedupe queries
 const clientFetch = cache(client.fetch.bind(client));
 
+
 const page = async ({ params }: Params) => {
   const data: AllMemosByClass[] = await clientFetch(ALLMEMOSBYCLASS, {
     class: params.classe,
@@ -35,7 +36,7 @@ const page = async ({ params }: Params) => {
                   >
                     <div className='border-2 m-0 border-gray-300 flex flex-col items-center rounded-lg'>
                       <Image
-                        priority
+                       priority
                         width={200}
                         height={200}
                         className='w-full h-72'
