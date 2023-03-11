@@ -2,7 +2,6 @@ import React, { cache } from 'react';
 import Questions from '@/components/Questions';
 import { client } from '../../../../../lib/sanity.client';
 import {
-
   ALLMEMOSBYCLASS,
   AllMemosByClass,
 } from '../../../../../queries/queries';
@@ -11,11 +10,10 @@ import Link from 'next/link';
 import Image from 'next/image';
 
 type Params = {
-  params: { classe: string;};
+  params: { classe: string };
 };
 // Enable NextJS to cache and dedupe queries
 const clientFetch = cache(client.fetch.bind(client));
-
 
 //TODO:
 // Query all memos of one single class
@@ -26,9 +24,9 @@ const page = async ({ params }: Params) => {
     class: params.classe,
   });
 
- // console.log('params in memo grid', params);
- // console.log('Data', data);
- 
+  // console.log('params in memo grid', params);
+  // console.log('Data', data);
+
   return (
     <main className='min-h-screen w-screen relative'>
       <h1 className='text-center py-20'>Grid of all memos</h1>
@@ -38,7 +36,10 @@ const page = async ({ params }: Params) => {
             memos.memos.map((memo) => {
               {
                 return (
-                  <Link key={memo._id} href={`/memo/${params.classe}/${memo.name}`}>
+                  <Link
+                    key={memo._id}
+                    href={`/memo/${params.classe}/${memo.name}`}
+                  >
                     <div className='border-2 m-0 border-gray-300 flex flex-col items-center rounded-lg'>
                       <Image
                         width={200}
@@ -46,9 +47,8 @@ const page = async ({ params }: Params) => {
                         className='w-full max-h-50'
                         src={`${memo.image.asset.url}`}
                         alt=''
-                   />
+                      />
                       <p className='text-center font-bold py-3'>{memo.name}</p>
-              
                     </div>
                   </Link>
                 );
