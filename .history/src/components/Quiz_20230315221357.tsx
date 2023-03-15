@@ -239,7 +239,7 @@ const Quiz = (quiz: QuizType) => {
                 <div
                   onClick={(e) => answerDHandler(e, question.answerCorrect)}
                   className={clsx(
-                    `font-bold text-center w-full lg:text-lg text-sm ${themeD} ${
+                    `font-bold text-center w-full text-xl lg:text-lg text-sm ${themeD} ${
                       themeD === '' && !isGood
                         ? ' hover:text-sky-500 hover:border-sky-500'
                         : ''

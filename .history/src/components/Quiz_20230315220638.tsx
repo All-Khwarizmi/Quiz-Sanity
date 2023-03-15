@@ -66,6 +66,7 @@ const Quiz = (quiz: QuizType) => {
     [isLast]
   );
   if (memoDateInLocalStorage) {
+    console.log('Inside test2', memoDateInLocalStorage);
     memoDateInLocalStorage.lastRecallDay = Date();
     memoDateInLocalStorage.nextRecallDay = getNextRecallDay(
       memoDateInLocalStorage.nextRecallDay
@@ -76,19 +77,17 @@ const Quiz = (quiz: QuizType) => {
   type MemoDateUpdateHandler = () => void;
   const memoDateUpdateHandler: MemoDateUpdateHandler = () => {
 
-    // Is memoTime hence memoDate
+    // Is memoTime hence 
     if (memoDate.current.memoDate?.isMemotime) { 
       localStorage.setItem(quiz.memo, JSON.stringify(memoDateInLocalStorage));
        localStorage.setItem('puntos', JSON.stringify(puntos! + 10));
        setPuntos((puntos) => (puntos! += 10));
        masPuntosToast10();
     } else {
-      // Is not memoTime but there's a memoDate
       if (memoDate.current.isMemoDate) {
         localStorage.setItem('puntos', JSON.stringify(puntos! + 10));
         setPuntos((puntos) => (puntos! += 10));
         masPuntosToast10();
-      // No thing
       } else {
         localStorage.setItem(quiz.memo, JSON.stringify(setMemoDate()));
         localStorage.setItem('puntos', JSON.stringify(puntos! + 50));
@@ -201,9 +200,7 @@ const Quiz = (quiz: QuizType) => {
                 <div
                   onClick={(e) => answerAHandler(e, question.answerCorrect)}
                   className={clsx(
-                    `font-bold text-center w-full lg:text-lg text-sm ${
-                      question.answerA.length > 15 ? '' : ' '
-                    } ${themeA} ${
+                    `font-bold text-center w-full text-xl  ${themeA} ${
                       themeA === '' && !isGood
                         ? ' hover:text-sky-500 hover:border-sky-500'
                         : ''
@@ -215,7 +212,7 @@ const Quiz = (quiz: QuizType) => {
                 <div
                   onClick={(e) => answerBHandler(e, question.answerCorrect)}
                   className={clsx(
-                    `font-bold text-center w-full  lg:text-lg text-sm ${themeB} ${
+                    `font-bold text-center w-full text-xl  ${themeB} ${
                       themeB === '' && !isGood
                         ? ' hover:text-sky-500 hover:border-sky-500'
                         : ''
@@ -227,7 +224,7 @@ const Quiz = (quiz: QuizType) => {
                 <div
                   onClick={(e) => answerCHandler(e, question.answerCorrect)}
                   className={clsx(
-                    `font-bold text-center w-full  lg:text-lg text-sm  ${themeC} ${
+                    `font-bold text-center w-full text-xl  ${themeC} ${
                       themeC === '' && !isGood
                         ? ' hover:text-sky-500 hover:border-sky-500'
                         : ''
@@ -239,7 +236,7 @@ const Quiz = (quiz: QuizType) => {
                 <div
                   onClick={(e) => answerDHandler(e, question.answerCorrect)}
                   className={clsx(
-                    `font-bold text-center w-full lg:text-lg text-sm ${themeD} ${
+                    `font-bold text-center w-full text-xl  ${themeD} ${
                       themeD === '' && !isGood
                         ? ' hover:text-sky-500 hover:border-sky-500'
                         : ''

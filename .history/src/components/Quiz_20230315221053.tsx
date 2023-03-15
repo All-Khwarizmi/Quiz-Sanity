@@ -201,8 +201,8 @@ const Quiz = (quiz: QuizType) => {
                 <div
                   onClick={(e) => answerAHandler(e, question.answerCorrect)}
                   className={clsx(
-                    `font-bold text-center w-full lg:text-lg text-sm ${
-                      question.answerA.length > 15 ? '' : ' '
+                    `font-bold text-center w-full text-xl ${
+                      question.answerA.length > 15 ? 
                     } ${themeA} ${
                       themeA === '' && !isGood
                         ? ' hover:text-sky-500 hover:border-sky-500'
@@ -215,7 +215,7 @@ const Quiz = (quiz: QuizType) => {
                 <div
                   onClick={(e) => answerBHandler(e, question.answerCorrect)}
                   className={clsx(
-                    `font-bold text-center w-full  lg:text-lg text-sm ${themeB} ${
+                    `font-bold text-center w-full text-xl  ${themeB} ${
                       themeB === '' && !isGood
                         ? ' hover:text-sky-500 hover:border-sky-500'
                         : ''
@@ -227,7 +227,7 @@ const Quiz = (quiz: QuizType) => {
                 <div
                   onClick={(e) => answerCHandler(e, question.answerCorrect)}
                   className={clsx(
-                    `font-bold text-center w-full  lg:text-lg text-sm  ${themeC} ${
+                    `font-bold text-center w-full text-xl  ${themeC} ${
                       themeC === '' && !isGood
                         ? ' hover:text-sky-500 hover:border-sky-500'
                         : ''
@@ -239,7 +239,7 @@ const Quiz = (quiz: QuizType) => {
                 <div
                   onClick={(e) => answerDHandler(e, question.answerCorrect)}
                   className={clsx(
-                    `font-bold text-center w-full lg:text-lg text-sm ${themeD} ${
+                    `font-bold text-center w-full text-xl  ${themeD} ${
                       themeD === '' && !isGood
                         ? ' hover:text-sky-500 hover:border-sky-500'
                         : ''
