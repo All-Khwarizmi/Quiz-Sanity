@@ -23,7 +23,7 @@ const Memo = ({ data, params }: MemoProps) => {
     <>
       <div className='w-full text-center'>
         <p className='uppercase font-bold text center pt-10 text-xl'>
-         Tienes {puntos} puntos ✨{' '}
+          {puntos} Tienes puntos ✨{' '}
         </p>
       </div>
       <div className=' grid-col-1 py-10 lg:pt-20 grid md:grid md:grid-cols-3 gap-x-10 gap-3 px-10'>

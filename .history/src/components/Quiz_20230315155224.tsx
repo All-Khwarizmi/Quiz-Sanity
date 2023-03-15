@@ -26,6 +26,10 @@ const colors: Colors = {
   good: 'bg-green-600',
   bad: 'bg-red-600',
 };
+type Params = {
+  params: { classe: string; memo: string };
+};
+type PuntosLocal = (puntos: number | string) => string | null;
 
 const Quiz = (quiz: QuizType) => {
   const [themeA, setThemeA] = useState<string>('');
@@ -53,10 +57,8 @@ const Quiz = (quiz: QuizType) => {
       // console.log(numberOfQuestion, count);
     }
   }, [count]);
-
   const numberOfQuestion = quiz.questions.length - 1;
   let quizRef = useRef(quiz);
-
   // Getting to know if there's memoDate in local Storage
   const memoDate = useRef(memoDateChecker(quiz.memo));
 
@@ -87,6 +89,8 @@ const Quiz = (quiz: QuizType) => {
       localStorage.setItem(quiz.memo, JSON.stringify(setMemoDate()));
     }
   };
+
+
 
   // Answer button handler. Checks for :
   // - correctness
@@ -166,9 +170,7 @@ const Quiz = (quiz: QuizType) => {
   return (
     <>
       <section className='h-full w-full flex flex-col space-y-5 justify-center items-center'>
-        <p className='uppercase font-bold pt-10 text-xl'>
-          Tienes {puntos} puntos ✨{' '}
-        </p>
+        <p className='uppercase font-bold pt-10 text-xl'>Tienes {puntos} puntos ✨ </p>
 
         {quizRef.current.questions.map((question, index) => {
           return (

@@ -26,6 +26,10 @@ const colors: Colors = {
   good: 'bg-green-600',
   bad: 'bg-red-600',
 };
+type Params = {
+  params: { classe: string; memo: string };
+};
+type PuntosLocal = (puntos: number | string) => string | null;
 
 const Quiz = (quiz: QuizType) => {
   const [themeA, setThemeA] = useState<string>('');
