@@ -1,4 +1,3 @@
-
 import React, { cache } from 'react';
 import { client } from '../../../../../lib/sanity.client';
 import {
@@ -51,8 +50,7 @@ const page = async ({ params }: Params) => {
             })
           )}
         </div>
-       
-        <Memo data={data} params={params} />
+        <Memo 
       </section>
     </main>
   );

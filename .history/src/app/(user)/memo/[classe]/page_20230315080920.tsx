@@ -1,4 +1,4 @@
-
+"use client"
 import React, { cache } from 'react';
 import { client } from '../../../../../lib/sanity.client';
 import {

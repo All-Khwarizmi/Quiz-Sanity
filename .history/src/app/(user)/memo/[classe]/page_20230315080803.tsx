@@ -1,4 +1,3 @@
-
 import React, { cache } from 'react';
 import { client } from '../../../../../lib/sanity.client';
 import {
@@ -7,7 +6,7 @@ import {
 } from '../../../../../queries/queries';
 import Link from 'next/link';
 import Image from 'next/image';
-import Memo from '@/components/Memo';
+import Me
 
 type Params = {
   params: { classe: string };
@@ -51,8 +50,6 @@ const page = async ({ params }: Params) => {
             })
           )}
         </div>
-       
-        <Memo data={data} params={params} />
       </section>
     </main>
   );

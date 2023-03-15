@@ -20,7 +20,7 @@ const page = async ({ params }: Params) => {
     class: params.classe,
   });
 
-  // console.log('params in memo grid', params);
+ console.log('params in memo grid', params);
   // console.log('Data', data);
 
   return (
@@ -51,7 +51,7 @@ const page = async ({ params }: Params) => {
             })
           )}
         </div>
-       
+        {/* @ts-expect-error Async Server Component */}
         <Memo data={data} params={params} />
       </section>
     </main>

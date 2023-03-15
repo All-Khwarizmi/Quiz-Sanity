@@ -12,7 +12,7 @@ type MemoProps = {
   data: AllMemosByClass[];
   params: { classe: string };
 };
-const Memo = ({ data, params }: MemoProps) => {
+const Memo = async ({ data, params }: MemoProps): Promise<JSX.Element> => {
   console.log('Start here');
   console.log('params in memo grid', params);
   console.log('Data', data);

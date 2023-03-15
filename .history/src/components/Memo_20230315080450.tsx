@@ -1,5 +1,5 @@
-"use client"
 import React, { cache } from 'react';
+import { groq } from 'next-sanity';
 import { client } from '../../lib/sanity.client';
 import { AllMemosByClass } from '../../queries/queries';
 import Link from 'next/link';
@@ -10,12 +10,11 @@ const clientFetch = cache(client.fetch.bind(client));
 
 type MemoProps = {
   data: AllMemosByClass[];
-  params: { classe: string };
+  params: Params
 };
-const Memo = ({ data, params }: MemoProps) => {
+const Memo = async ({ data, params }: MemoProps) => {
   console.log('Start here');
-  console.log('params in memo grid', params);
-  console.log('Data', data);
+  //console.log(data);
   return (
     <div className=' grid-col-1 py-10 lg:pt-20 grid md:grid md:grid-cols-3 gap-x-10 gap-3 px-10'>
       {data.map((memos) =>
