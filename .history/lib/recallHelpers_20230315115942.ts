@@ -166,31 +166,7 @@ export const memoDateChecker: MemoDateChecker = (memoName) => {
 
 };
 
-type UpdateMemoDate = (memoDate: MemoDateData) => void
 export const updateMemoDate = () => {
-
+    
 }
 
-export type GetNextRecallDay = (recallDay: string) => string
-export const getNextRecallDay: GetNextRecallDay = (recallDay) => {
-  if (recallDay === 'recallTen') {
-    return 'recallTen';
-  } else {
-    const recallDays = [
-      'recallOne',
-      'recallTwo',
-      'recallThree',
-      'recallFour',
-      'recallSix',
-      'recallSeven',
-      'recallEight',
-      'recallNine',
-      'recallTen',
-    ];
-    const indexOfRecallDay = recallDays.indexOf(recallDay);
-
-    const nextRecallD = recallDays[indexOfRecallDay + 1];
-
-    return nextRecallD;
-  }
-};

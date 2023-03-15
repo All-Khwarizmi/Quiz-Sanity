@@ -49,10 +49,8 @@ const Quiz = (quiz: QuizType) => {
       // console.log(numberOfQuestion, count);
     }
   }, [count]);
-
-  // Getting to know if there's memoDate in local Storage
   const memoDate = useRef(memoDateChecker(quiz.memo));
-  // Memoizing getting memoDate to only when is last question to avoid to rerender and fetching from local storage. Not only no need for fresh data but it might return null (It's handled by the previous check any way)
+
   let memoDateInLocalStorage: MemoDateData = useMemo(
     () => JSON.parse(localStorage.getItem(quiz.memo)!),
     [isLast]

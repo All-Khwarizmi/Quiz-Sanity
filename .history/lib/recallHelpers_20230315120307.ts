@@ -172,7 +172,7 @@ export const updateMemoDate = () => {
 }
 
 export type GetNextRecallDay = (recallDay: string) => string
-export const getNextRecallDay: GetNextRecallDay = (recallDay) => {
+export const getNextRecallDay = (recallDay) => {
   if (recallDay === 'recallTen') {
     return 'recallTen';
   } else {
@@ -187,7 +187,7 @@ export const getNextRecallDay: GetNextRecallDay = (recallDay) => {
       'recallNine',
       'recallTen',
     ];
-    const indexOfRecallDay = recallDays.indexOf(recallDay);
+    const indexOfRecallDay = recallDays.indexOf(nextRecallDay);
 
     const nextRecallD = recallDays[indexOfRecallDay + 1];
 

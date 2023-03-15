@@ -1,17 +1,13 @@
 'use client';
 import { idGen } from '../../lib/idGen';
-import React, { useEffect, useMemo, useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { QuizType } from '../../lib/memoFetcher';
 import clsx from 'clsx';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { badToast, goodToast, masPuntosToast } from '../../lib/toasts';
 import Link from 'next/link';
-import {
-  getNextRecallDay,
-  memoDateChecker,
-  setMemoDate,
-} from '../../lib/recallHelpers';
+import { getNextRecallDay, memoDateChecker, setMemoDate } from '../../lib/recallHelpers';
 import { MemoDateData } from '../../lib/memoTypes';
 type Colors = {
   good: string;
@@ -49,19 +45,15 @@ const Quiz = (quiz: QuizType) => {
       // console.log(numberOfQuestion, count);
     }
   }, [count]);
-
-  // Getting to know if there's memoDate in local Storage
-  const memoDate = useRef(memoDateChecker(quiz.memo));
-  // Memoizing getting memoDate to only when is last question to avoid to rerender and fetching from local storage. Not only no need for fresh data but it might return null (It's handled by the previous check any way)
-  let memoDateInLocalStorage: MemoDateData = useMemo(
-    () => JSON.parse(localStorage.getItem(quiz.memo)!),
-    [isLast]
-  );
-  memoDateInLocalStorage.lastRecallDay = Date();
-  memoDateInLocalStorage.nextRecallDay = getNextRecallDay(
-    memoDateInLocalStorage.nextRecallDay
-  );
-
+  const memoDate = useRef( memoDateChecker(quiz.memo));
+  if (memoDate.current.isMemoDate && isLast) {
+    let memoDateInLocalStorage: MemoDateData = JSON.parse(localStorage.getItem(quiz.memo)!);
+    memoDateInLocalStorage.lastRecallDay = Date()
+    memoDateInLocalStorage.nextRecallDay = getNextRecallDay(
+      memoDateInLocalStorage.
+    );
+  }
+ 
   const numberOfQuestion = quiz.questions.length - 1;
   let quizRef = useRef(quiz);
   // console.log('QuizRef', quizRef.current, quizRef.current.questions.map(item => console.log(item)));
@@ -77,16 +69,13 @@ const Quiz = (quiz: QuizType) => {
           localStorage.setItem('puntos', JSON.stringify(puntos! + 50));
           setPuntos((puntos) => (puntos! += 50));
           masPuntosToast(); // TODO: Change to 50
-          localStorage.setItem(
-            quiz.memo,
-            JSON.stringify(memoDateInLocalStorage)
-          );
         } else {
           localStorage.setItem('puntos', JSON.stringify(puntos! + 10));
           setPuntos((puntos) => (puntos! += 10));
           masPuntosToast(); // TODO: Change to 10
-          localStorage.setItem(quiz.memo, JSON.stringify(setMemoDate()));
+          localStorage.setItem(quiz.memo, JSON.stringify(setMemoDate()))
         }
+
       }
     } else {
       setThemeA(colors.bad);
