@@ -26,7 +26,7 @@ const Memo = ({ data, params }: MemoProps) => {
          Tienes {puntos} puntos ✨{' '}
         </p>
       </div>
-      <div className=' grid-col-1 py-10 lg:pt-20  grid lg:flex lg:flex-row gap-x-10 gap-3 px-10'>
+      <div className=' grid-col-1 py-10 lg:pt-20  grid md:grid md:grid-cols-3 gap-x-10 gap-3 px-10'>
         {data.map((memos) =>
           memos.memos.map((memo) => {
             const isTime = memoDateChecker(memo.name);
@@ -48,7 +48,7 @@ const Memo = ({ data, params }: MemoProps) => {
                         </p>
                       </div>
                     ) : (
-                      <div className='flex flex-row space-x-3 lg:space-x-32 text-sm  justify-between'>
+                      <div className='flex flex-row space-x-3 lg:space-x-20 text-sm  justify-between'>
                         <p className={`uppercase italic text-gray-600`}>
                           <span className='font-bold'>+10</span> puntos
                         </p>

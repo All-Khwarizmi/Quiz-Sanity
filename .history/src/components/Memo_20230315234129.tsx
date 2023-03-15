@@ -26,38 +26,36 @@ const Memo = ({ data, params }: MemoProps) => {
          Tienes {puntos} puntos ✨{' '}
         </p>
       </div>
-      <div className=' grid-col-1 py-10 lg:pt-20  grid lg:flex lg:flex-row gap-x-10 gap-3 px-10'>
+      <div className=' grid-col-1 py-10 lg:pt-20  grid md:grid md:grid-cols-3 gap-x-10 gap-3 px-10'>
         {data.map((memos) =>
           memos.memos.map((memo) => {
             const isTime = memoDateChecker(memo.name);
             {
               return (
                 <Link
-                  className='flex items-center space-y-1 flex-col'
+                className='flex items-center'
                   key={memo._id}
                   href={`/memo/${params.classe}/${memo.name}`}
                 >
-                  <div className=' '>
-                    {!isTime.isMemoDate || isTime.memoDate?.isMemotime ? (
-                      <div className='flex flex-row text-sm  space-x-3 justify-center'>
-                        <p
-                          className={`uppercase italic text-gray-600 text-cyan-500 animate-pulse`}
-                        >
-                          <span className='font-bold text-white '> +50</span>{' '}
-                          puntos
-                        </p>
-                      </div>
-                    ) : (
-                      <div className='flex flex-row space-x-3 lg:space-x-32 text-sm  justify-between'>
-                        <p className={`uppercase italic text-gray-600`}>
-                          <span className='font-bold'>+10</span> puntos
-                        </p>
-                        <p className='uppercase italic text-gray-600'>
-                          Dentro de {isTime.memoDate!.difference} días
-                        </p>
-                      </div>
-                    )}
-                  </div>
+                  {!isTime.isMemoDate || isTime.memoDate?.isMemotime ? (
+                    <div className='flex flex-row text-sm  space-x-3 justify-center'>
+                      <p
+                        className={`uppercase italic text-gray-600 text-cyan-500 animate-pulse`}
+                      >
+                        <span className='font-bold text-white '> +50</span>{' '}
+                        puntos
+                      </p>
+                    </div>
+                  ) : (
+                    <div className='flex flex-row space-x-3 text-sm  justify-between'>
+                      <p className={`uppercase italic text-gray-600`}>
+                        <span className='font-bold'>+10</span> puntos
+                      </p>
+                      <p className='uppercase italic text-gray-600'>
+                        Dentro de {isTime.memoDate!.difference} días
+                      </p>
+                    </div>
+                  )}
                   <div
                     className={`border-2 ${
                       isTime.memoDate?.isMemotime ? 'animate-pulse' : ''
