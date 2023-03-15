@@ -21,12 +21,9 @@ const Memo = ({ data, params }: MemoProps) => {
   }, []);
   return (
     <>
-      <div className='w-full text-center'>
-        <p className='uppercase font-bold text center pt-10 text-xl'>
-          {puntos} puntos ✨{' '}
-        </p>
-      </div>
+    div
       <div className=' grid-col-1 py-10 lg:pt-20 grid md:grid md:grid-cols-3 gap-x-10 gap-3 px-10'>
+        
         {data.map((memos) =>
           memos.memos.map((memo) => {
             const isTime = memoDateChecker(memo.name);

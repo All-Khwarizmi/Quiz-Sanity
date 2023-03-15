@@ -41,14 +41,7 @@ const Quiz = (quiz: QuizType) => {
   const [puntos, setPuntos] = useState<number>();
   const [count, setCount] = useState<number>(0);
 
-  // Getting points from local storage and setting up state accordingly
-  useEffect(() => {
-    if (localStorage.getItem('puntos')) {
-      let puntosInLocal = localStorage.getItem('puntos');
-      let puntos = parseInt(puntosInLocal!);
-      setPuntos(puntos);
-    }
-  }, []);
+ 
 
   // Keeping track of questions
   useEffect(() => {

@@ -21,7 +21,7 @@ const Memo = ({ data, params }: MemoProps) => {
   }, []);
   return (
     <>
-      <div className='w-full text-center'>
+      <div className=''>
         <p className='uppercase font-bold text center pt-10 text-xl'>
           {puntos} puntos ✨{' '}
         </p>

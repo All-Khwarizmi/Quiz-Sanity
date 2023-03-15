@@ -170,7 +170,7 @@ const Quiz = (quiz: QuizType) => {
   return (
     <>
       <section className='h-full w-full flex flex-col space-y-5 justify-center items-center'>
-        <p className='uppercase font-bold pt-10 text-xl'>{puntos} puntos ✨ </p>
+       
 
         {quizRef.current.questions.map((question, index) => {
           return (

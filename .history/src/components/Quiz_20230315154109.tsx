@@ -219,7 +219,7 @@ const Quiz = (quiz: QuizType) => {
                   className={clsx(
                     `font-bold text-center w-full text-xl  ${themeC} ${
                       themeC === '' && !isGood
-                        ? ' hover:text-sky-500 hover:border-sky-500'
+                        ? 'hover:scale-125 hover:text-sky-500 hover:border-sky-500'
                         : ''
                     }  uppercase border-2 rounded-lg py-5 px-3`
                   )}
@@ -231,7 +231,7 @@ const Quiz = (quiz: QuizType) => {
                   className={clsx(
                     `font-bold text-center w-full text-xl  ${themeD} ${
                       themeD === '' && !isGood
-                        ? ' hover:text-sky-500 hover:border-sky-500'
+                        ? 'hover:scale-125 hover:text-sky-500 hover:border-sky-500'
                         : ''
                     }  uppercase border-2 rounded-lg py-5 px-3`
                   )}
