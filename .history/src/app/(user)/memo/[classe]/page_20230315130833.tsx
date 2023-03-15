@@ -1,5 +1,5 @@
 
-import React, { cache, use } from 'react';
+import React, { cache } from 'react';
 import { client } from '../../../../../lib/sanity.client';
 import {
   ALLMEMOSBYCLASS,
@@ -25,7 +25,8 @@ const page = async ({ params }: Params) => {
   // console.log('Data', data);
 
   return (
-    <main className='min-h-screen w-screen relative'>
+    
+   /*  <main className='min-h-screen w-screen relative'>
       <section className='h-full py-2'>
         <div className=' grid-col-1 py-10 lg:pt-20 grid md:grid md:grid-cols-3 gap-x-10 gap-3 px-10'>
           {data.map((memos) =>
@@ -55,7 +56,7 @@ const page = async ({ params }: Params) => {
        
         <Memo data={data} params={params} />
       </section>
-    </main>
+    </main> */
   );
 };
 

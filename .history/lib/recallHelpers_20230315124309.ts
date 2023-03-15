@@ -1,4 +1,4 @@
-'use client'
+
 import {
   Calendar,
   IsMemoTime,
@@ -154,17 +154,13 @@ export const memoDateChecker: MemoDateChecker = (memoName) => {
   let memoDateCheckerReturn: MemoDateCheckerReturn = {
     isMemoDate: false,
   };
-  const windowObj = window || null
-  if (window) {
-    const isMDInLocalStorage = window.localStorage.getItem(memoName);
+  const isMDInLocalStorage = localStorage.getItem(memoName);
   if (isMDInLocalStorage) {
     let memoDate = memoParser(isMDInLocalStorage);
     const isTimeObj = isMemoTime(memoDate);
     memoDateCheckerReturn.isMemoDate = true
     memoDateCheckerReturn.memoDate = isTimeObj
     return memoDateCheckerReturn
-  }
-  
   }
 
   return memoDateCheckerReturn

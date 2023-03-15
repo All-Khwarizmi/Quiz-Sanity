@@ -59,11 +59,11 @@ const Quiz = (quiz: QuizType) => {
   );
   if (memoDateInLocalStorage) {
     
-    memoDateInLocalStorage.lastRecallDay = Date();
-    memoDateInLocalStorage.nextRecallDay = getNextRecallDay(
-      memoDateInLocalStorage.nextRecallDay
-    );
   }
+  memoDateInLocalStorage.lastRecallDay = Date();
+  memoDateInLocalStorage.nextRecallDay = getNextRecallDay(
+    memoDateInLocalStorage.nextRecallDay
+  );
 
   const numberOfQuestion = quiz.questions.length - 1;
   let quizRef = useRef(quiz);

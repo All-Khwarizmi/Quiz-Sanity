@@ -1,14 +1,13 @@
 
-import React, { cache, use } from 'react';
-import { client } from '../../../../../lib/sanity.client';
+import React, { cache } from 'react';
+import { client } from '../../lib/sanity.client';
 import {
   ALLMEMOSBYCLASS,
   AllMemosByClass,
-} from '../../../../../queries/queries';
+} from '../../queries/queries';
 import Link from 'next/link';
 import Image from 'next/image';
-import Memo from '@/components/Memo'; 
-import MemoGrid from '@/components/MemoGrid';
+import Memo from '@/components/Memo';
 
 type Params = {
   params: { classe: string };
@@ -16,10 +15,17 @@ type Params = {
 // Enable NextJS to cache and dedupe queries
 const clientFetch = cache(client.fetch.bind(client));
 
-const page = async ({ params }: Params) => {
+/* const fetcher = async ({ params }: Params) => {
   const data: AllMemosByClass[] = await clientFetch(ALLMEMOSBYCLASS, {
     class: params.classe,
   });
+  return data
+}; */
+
+const MemoGrid = async ({ params }: Params) => {
+  const data: AllMemosByClass[] =  use(clientFetch(ALLMEMOSBYCLASS, {
+    class: params.classe,
+  }));
 
   // console.log('params in memo grid', params);
   // console.log('Data', data);
@@ -52,14 +58,14 @@ const page = async ({ params }: Params) => {
             })
           )}
         </div>
-       
+
         <Memo data={data} params={params} />
       </section>
     </main>
   );
 };
 
-export default page;
+export default MemoGrid;
 
 /*  @ts-expect-error Async Server Component
    <Questions data={data} />

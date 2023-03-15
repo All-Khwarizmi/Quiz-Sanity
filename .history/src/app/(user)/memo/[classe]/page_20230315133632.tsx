@@ -1,5 +1,5 @@
 
-import React, { cache, use } from 'react';
+import React, { cache } from 'react';
 import { client } from '../../../../../lib/sanity.client';
 import {
   ALLMEMOSBYCLASS,
@@ -16,8 +16,8 @@ type Params = {
 // Enable NextJS to cache and dedupe queries
 const clientFetch = cache(client.fetch.bind(client));
 
-const page = async ({ params }: Params) => {
-  const data: AllMemosByClass[] = await clientFetch(ALLMEMOSBYCLASS, {
+const page = ({ params }: Params) => {
+  const data: AllMemosByClass[] = clientFetch(ALLMEMOSBYCLASS, {
     class: params.classe,
   });
 

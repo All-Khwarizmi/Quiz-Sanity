@@ -1,4 +1,4 @@
-
+"use client"
 import React, { cache, use } from 'react';
 import { client } from '../../../../../lib/sanity.client';
 import {
@@ -17,9 +17,9 @@ type Params = {
 const clientFetch = cache(client.fetch.bind(client));
 
 const page = async ({ params }: Params) => {
-  const data: AllMemosByClass[] = await clientFetch(ALLMEMOSBYCLASS, {
+  const data: AllMemosByClass[] = use(clientFetch(ALLMEMOSBYCLASS, {
     class: params.classe,
-  });
+  }));
 
   // console.log('params in memo grid', params);
   // console.log('Data', data);

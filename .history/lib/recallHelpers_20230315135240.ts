@@ -145,31 +145,7 @@ export const memoParser: MemoParser = (memoDateStr) => {
   return memo;
 };
 
-type MemoDateCheckerReturn = {
-  isMemoDate: boolean;
-  memoDate?: IsMemoTimeReturn;
-};
-type MemoDateChecker = (memoName: string) => MemoDateCheckerReturn;
-export const memoDateChecker: MemoDateChecker = (memoName) => {
-  let memoDateCheckerReturn: MemoDateCheckerReturn = {
-    isMemoDate: false,
-  };
-  const windowObj = window || null
-  if (window) {
-    const isMDInLocalStorage = window.localStorage.getItem(memoName);
-  if (isMDInLocalStorage) {
-    let memoDate = memoParser(isMDInLocalStorage);
-    const isTimeObj = isMemoTime(memoDate);
-    memoDateCheckerReturn.isMemoDate = true
-    memoDateCheckerReturn.memoDate = isTimeObj
-    return memoDateCheckerReturn
-  }
-  
-  }
 
-  return memoDateCheckerReturn
-
-};
 
 type UpdateMemoDate = (memoDate: MemoDateData) => void
 export const updateMemoDate = () => {

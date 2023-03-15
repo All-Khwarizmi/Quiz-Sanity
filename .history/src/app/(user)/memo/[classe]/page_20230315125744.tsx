@@ -1,5 +1,5 @@
-
-import React, { cache, use } from 'react';
+"use client"
+import React, { cache } from 'react';
 import { client } from '../../../../../lib/sanity.client';
 import {
   ALLMEMOSBYCLASS,
@@ -7,8 +7,7 @@ import {
 } from '../../../../../queries/queries';
 import Link from 'next/link';
 import Image from 'next/image';
-import Memo from '@/components/Memo'; 
-import MemoGrid from '@/components/MemoGrid';
+import Memo from '@/components/Memo';
 
 type Params = {
   params: { classe: string };
@@ -19,7 +18,7 @@ const clientFetch = cache(client.fetch.bind(client));
 const page = async ({ params }: Params) => {
   const data: AllMemosByClass[] = await clientFetch(ALLMEMOSBYCLASS, {
     class: params.classe,
-  });
+  })!;
 
   // console.log('params in memo grid', params);
   // console.log('Data', data);

@@ -154,7 +154,7 @@ export const memoDateChecker: MemoDateChecker = (memoName) => {
   let memoDateCheckerReturn: MemoDateCheckerReturn = {
     isMemoDate: false,
   };
-  const windowObj = window || null
+  const 
   if (window) {
     const isMDInLocalStorage = window.localStorage.getItem(memoName);
   if (isMDInLocalStorage) {

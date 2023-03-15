@@ -1,5 +1,5 @@
 
-import React, { cache, use } from 'react';
+import React, { cache } from 'react';
 import { client } from '../../../../../lib/sanity.client';
 import {
   ALLMEMOSBYCLASS,
@@ -8,7 +8,7 @@ import {
 import Link from 'next/link';
 import Image from 'next/image';
 import Memo from '@/components/Memo'; 
-import MemoGrid from '@/components/MemoGrid';
+import Mem
 
 type Params = {
   params: { classe: string };

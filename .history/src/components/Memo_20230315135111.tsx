@@ -22,7 +22,7 @@ const Memo = ({ data, params }: MemoProps) => {
   log('MemoNames', memoName);
   
 
-   const newData = data.map((memos) =>
+    data.map((memos) =>
       memos.memos.map((memo) => {
         log('in Map in Memo:', memo.name);
         const isTime = memoDateChecker(memo.name);
@@ -64,10 +64,10 @@ const Memo = ({ data, params }: MemoProps) => {
         }
       })
     );
-
+  }
   return (
     <div className=' grid-col-1 py-10 lg:pt-20 grid md:grid md:grid-cols-3 gap-x-10 gap-3 px-10'>
-      {newData}
+      
     </div>
   );
 };

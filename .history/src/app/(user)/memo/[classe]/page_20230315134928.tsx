@@ -17,7 +17,7 @@ type Params = {
 const clientFetch = cache(client.fetch.bind(client));
 
 const page = async ({ params }: Params) => {
-  const data: AllMemosByClass[] = await clientFetch(ALLMEMOSBYCLASS, {
+  const data: AllMemosByClass[] = clientFetch(ALLMEMOSBYCLASS, {
     class: params.classe,
   });
 

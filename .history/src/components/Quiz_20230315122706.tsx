@@ -56,14 +56,8 @@ const Quiz = (quiz: QuizType) => {
   let memoDateInLocalStorage: MemoDateData = useMemo(
     () => JSON.parse(localStorage.getItem(quiz.memo)!),
     [isLast]
+  )
   );
-  if (memoDateInLocalStorage) {
-    
-    memoDateInLocalStorage.lastRecallDay = Date();
-    memoDateInLocalStorage.nextRecallDay = getNextRecallDay(
-      memoDateInLocalStorage.nextRecallDay
-    );
-  }
 
   const numberOfQuestion = quiz.questions.length - 1;
   let quizRef = useRef(quiz);
