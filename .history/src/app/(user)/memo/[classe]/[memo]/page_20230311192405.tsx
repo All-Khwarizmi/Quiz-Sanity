@@ -1,7 +1,6 @@
 import Quiz from '@/components/Quiz';
 import { memoFetcher, QuizType } from '../../../../../../lib/memoFetcher';
 
-
 type Params = {
   params: { classe: string; memo: string };
 };
