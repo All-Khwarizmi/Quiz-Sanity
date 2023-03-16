@@ -160,9 +160,7 @@ const Quiz = (quiz: QuizType) => {
       setIsGood(true);
       setThemeD(colors.good);
       goodToast();
-      if (isLast) {
-        memoDateUpdateHandler();
-      }
+      memoDateUpdateHandler();
     } else {
       setThemeD(colors.bad);
       badToast();
