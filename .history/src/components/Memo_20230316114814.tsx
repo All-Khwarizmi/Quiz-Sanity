@@ -29,7 +29,7 @@ const Memo = ({ data, params }: MemoProps) => {
          Tienes {puntos} puntos ✨{' '}
         </p>
       </div>
-      <div className=' grid-col-1 py-10 lg:pt-20 space-y-5 grid lg:flex lg:flex-row gap-x-10 gap-3 px-10'>
+      <div className=' grid-col-1 py-10 lg:pt-20  grid lg:flex lg:flex-row gap-x-10 gap-3 px-10'>
         {data.map((memos) =>
           memos.memos.map((memo) => {
             const isTime = memoDateChecker(memo.name);
@@ -37,7 +37,7 @@ const Memo = ({ data, params }: MemoProps) => {
             {
               return (
                 <Link
-                  className='flex items-center space-y-1 flex-col'
+                  className='flex items-center space-y- flex-col'
                   key={memo._id}
                   href={`/memo/${params.classe}/${memo.name}`}
                 >
