@@ -52,7 +52,7 @@ const Memo = ({ data, params }: MemoProps) => {
                         </p>
                       </div>
                     ) : (
-                      <div className='flex flex-row space-x-10 md:space-x-32 text-sm  justify-between'>
+                      <div className='flex flex-row sp md:space-x-32 text-sm  justify-between'>
                         <p className={`uppercase italic text-gray-600`}>
                           <span className='font-bold'>+10</span> puntos
                         </p>
