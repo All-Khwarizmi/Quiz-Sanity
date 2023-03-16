@@ -155,8 +155,8 @@ export const memoDateChecker: MemoDateChecker = (memoName) => {
     isMemoDate: false,
   };
   const isMDInLocalStorage = localStorage.getItem(memoName);
-  if (isMDInLocalStorage) {
-    console.log('isMDInLocalStorage', isMDInLocalStorage);
+  if (isMDInLocalStorage !== null) {
+    console.log("")
     let memoDate = memoParser(isMDInLocalStorage!);
     const isTimeObj = isMemoTime(memoDate);
     memoDateCheckerReturn.isMemoDate = true

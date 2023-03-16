@@ -81,9 +81,9 @@ const Quiz = (quiz: QuizType) => {
     // Is memoTime hence memoDate
     if (memoDate.current.isMemoDate && memoDate.current.memoDate?.isMemotime) {
       localStorage.setItem(quiz.memo, JSON.stringify(memoDateInLocalStorage));
-      localStorage.setItem('puntos', JSON.stringify(puntos! + 50));
-      setPuntos((puntos) => (puntos! += 50));
-      masPuntosToast50();
+      localStorage.setItem('puntos', JSON.stringify(puntos! + 10));
+      setPuntos((puntos) => (puntos! += 10));
+      masPuntosToast10();
     } else {
       // Is not memoTime but there's a memoDate
       if (memoDate.current.isMemoDate) {

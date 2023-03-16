@@ -59,8 +59,7 @@ const Quiz = (quiz: QuizType) => {
 
   // Getting to know if there's memoDate in local Storage
   const memoDate = useRef(memoDateChecker(quiz.memo));
-  console.log("memoDate Ref:", memoDate)
-  console.log("Quiz memo:", quiz)
+  console.log("memoDate Ref:" memoDate)
 
   // Memoizing getting memoDate to only when is last question to avoid to rerender and fetching from local storage. Not only no need for fresh data but it might return null (It's handled by the previous check any way)
   let memoDateInLocalStorage: MemoDateData = useMemo(
@@ -79,18 +78,18 @@ const Quiz = (quiz: QuizType) => {
   const memoDateUpdateHandler: MemoDateUpdateHandler = () => {
 
     // Is memoTime hence memoDate
-    if (memoDate.current.isMemoDate && memoDate.current.memoDate?.isMemotime) {
+    if (memoDate.current.memoDate?.isMemotime) { 
       localStorage.setItem(quiz.memo, JSON.stringify(memoDateInLocalStorage));
-      localStorage.setItem('puntos', JSON.stringify(puntos! + 50));
-      setPuntos((puntos) => (puntos! += 50));
-      masPuntosToast50();
+       localStorage.setItem('puntos', JSON.stringify(puntos! + 10));
+       setPuntos((puntos) => (puntos! += 10));
+       masPuntosToast10();
     } else {
       // Is not memoTime but there's a memoDate
       if (memoDate.current.isMemoDate) {
         localStorage.setItem('puntos', JSON.stringify(puntos! + 10));
         setPuntos((puntos) => (puntos! += 10));
         masPuntosToast10();
-        // No thing or it's memo time
+      // No thing
       } else {
         localStorage.setItem(quiz.memo, JSON.stringify(setMemoDate()));
         localStorage.setItem('puntos', JSON.stringify(puntos! + 50));

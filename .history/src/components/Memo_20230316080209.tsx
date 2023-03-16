@@ -59,7 +59,7 @@ const Memo = ({ data, params }: MemoProps) => {
                     )}
                   </div>
                   <div
-                    className={`border-2  m-0 border-gray-300 max-w-96 flex flex-col items-center rounded-lg`}
+                    className={`border-2   m-0 border-gray-300 max-w-96 flex flex-col items-center rounded-lg`}
                   >
                     <Image
                       priority
