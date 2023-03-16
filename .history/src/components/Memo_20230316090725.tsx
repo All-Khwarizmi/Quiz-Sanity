@@ -19,7 +19,6 @@ const Memo = ({ data, params }: MemoProps) => {
       setPuntos(puntos);
     } else {
       localStorage.setItem('puntos', '0')
-      setPuntos(0);
     }
   }, []);
   return (

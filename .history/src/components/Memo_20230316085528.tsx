@@ -17,9 +17,6 @@ const Memo = ({ data, params }: MemoProps) => {
       let puntosInLocal = localStorage.getItem('puntos');
       let puntos = parseInt(puntosInLocal!);
       setPuntos(puntos);
-    } else {
-      localStorage.setItem('puntos', '0')
-      setPuntos(0);
     }
   }, []);
   return (
@@ -33,7 +30,7 @@ const Memo = ({ data, params }: MemoProps) => {
         {data.map((memos) =>
           memos.memos.map((memo) => {
             const isTime = memoDateChecker(memo.name);
-            console.log('isTime', isTime);
+            console.log('isTimeObj', isTimeObj);
             {
               return (
                 <Link
