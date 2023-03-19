@@ -1,10 +1,10 @@
-
+import React, { cache } from 'react';
 import { client } from '../../../../../lib/sanity.client';
 import {
   ALLMEMOSBYCLASS,
   AllMemosByClass,
 } from '../../../../../queries/queries';
-import { cache } from 'react';
+
 
 import Memo from '@/components/Memo';
 

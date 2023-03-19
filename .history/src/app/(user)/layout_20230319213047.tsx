@@ -2,7 +2,7 @@ import '../../styles/globals.css'
 
 export const metadata = {
   title: 'QuizoO',
-  description: 'Réviser autrement',
+  description: 'Réviser ',
   icons: "/cerveau.png"
 }
 

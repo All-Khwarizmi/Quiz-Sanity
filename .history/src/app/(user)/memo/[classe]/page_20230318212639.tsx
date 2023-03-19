@@ -1,4 +1,4 @@
-
+import React,  from 'react';
 import { client } from '../../../../../lib/sanity.client';
 import {
   ALLMEMOSBYCLASS,

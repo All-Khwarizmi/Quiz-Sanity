@@ -1,10 +1,10 @@
-
+import React, { cache } from 'react';
 import { client } from '../../../../../lib/sanity.client';
 import {
   ALLMEMOSBYCLASS,
   AllMemosByClass,
 } from '../../../../../queries/queries';
-import { cache } from 'react';
+import { Ca } from 'next/dist/shared/lib/utils';
 
 import Memo from '@/components/Memo';
 
@@ -12,7 +12,7 @@ type Params = {
   params: { classe: string };
 };
 // Enable NextJS to cache and dedupe queries
-const clientFetch = cache(client.fetch.bind(client));
+const clientFetch = CacheFs(client.fetch.bind(client));
 
 const page = async ({ params }: Params) => {
   const data: AllMemosByClass[] = await clientFetch(ALLMEMOSBYCLASS, {
