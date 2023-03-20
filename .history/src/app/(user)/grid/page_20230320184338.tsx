@@ -27,7 +27,7 @@ const page = async () => {
                     src={`${classe.image.asset.url}`}
                     alt=''
                   ></Image>
-                  <p className='text-center font-bold uppercase text-3xl py-3'>
+                  <p className='text-center font-bold text-white uppercase text-3xl py-3'>
                     {classe.title}
                   </p>
                 </div>

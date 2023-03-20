@@ -183,7 +183,7 @@ const Quiz = (quiz: QuizType) => {
   return (
     <>
       <section className='h-full w-full flex flex-col space-y-5 justify-center items-center'>
-        <p className='uppercase font-bold text-white pt-10 text-xl'>
+        <p className='uppercase font-bold pt-10 text-xl'>
           Tienes {puntos} puntos ✨{' '}
         </p>
 
@@ -234,7 +234,7 @@ const Quiz = (quiz: QuizType) => {
                 <div
                   onClick={(e) => answerCHandler(e, question.answerCorrect)}
                   className={clsx(
-                    `font-bold text-center w-full text-white lg:text-lg text-sm  ${themeC} ${
+                    `font-bold text-center w-full  lg:text-lg text-sm  ${themeC} ${
                       themeC === '' && !isGood
                         ? ' hover:text-sky-500 hover:border-sky-500'
                         : ''
@@ -246,7 +246,7 @@ const Quiz = (quiz: QuizType) => {
                 <div
                   onClick={(e) => answerDHandler(e, question.answerCorrect)}
                   className={clsx(
-                    `font-bold text-center text-white w-full lg:text-lg text-sm ${themeD} ${
+                    `font-bold text-center w-full lg:text-lg text-sm ${themeD} ${
                       themeD === '' && !isGood
                         ? ' hover:text-sky-500 hover:border-sky-500'
                         : ''

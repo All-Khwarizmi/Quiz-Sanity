@@ -62,9 +62,9 @@ const Quiz = (quiz: QuizType) => {
 
   // Getting to know if there's memoDate in local Storage
   const memoDate = useRef(memoDateChecker(quiz.memo));
-  console.log('Nb of ?:', numberOfQuestion);
-  console.log('count', count);
-  console.log('isLast', isLast);
+  console.log("Nb of ?:", numberOfQuestion)
+  console.log("count", count)
+  console.log("isLast", isLast)
 
   // Memoizing getting memoDate to only when is last question to avoid to rerender and fetching from local storage. Not only no need for fresh data but it might return null (It's handled by the previous check any way)
   let memoDateInLocalStorage: MemoDateData = useMemo(
@@ -81,6 +81,7 @@ const Quiz = (quiz: QuizType) => {
   // Refactoring memoDate and local storage update logic
   type MemoDateUpdateHandler = () => void;
   const memoDateUpdateHandler: MemoDateUpdateHandler = () => {
+
     // Is memoTime hence memoDate
     if (memoDate.current.isMemoDate && memoDate.current.memoDate?.isMemotime) {
       localStorage.setItem(quiz.memo, JSON.stringify(memoDateInLocalStorage));
@@ -183,7 +184,7 @@ const Quiz = (quiz: QuizType) => {
   return (
     <>
       <section className='h-full w-full flex flex-col space-y-5 justify-center items-center'>
-        <p className='uppercase font-bold text-white pt-10 text-xl'>
+        <p className='uppercase font-bold pt-10 text-xl'>
           Tienes {puntos} puntos ✨{' '}
         </p>
 
@@ -208,7 +209,7 @@ const Quiz = (quiz: QuizType) => {
                 <div
                   onClick={(e) => answerAHandler(e, question.answerCorrect)}
                   className={clsx(
-                    `font-bold text-center w-full text-white lg:text-lg text-sm ${
+                    `font-bold text-center w-full text- lg:text-lg text-sm ${
                       question.answerA.length > 15 ? '' : ' '
                     } ${themeA} ${
                       themeA === '' && !isGood
@@ -222,7 +223,7 @@ const Quiz = (quiz: QuizType) => {
                 <div
                   onClick={(e) => answerBHandler(e, question.answerCorrect)}
                   className={clsx(
-                    `font-bold text-center w-full  text-white lg:text-lg text-sm ${themeB} ${
+                    `font-bold text-center w-full  lg:text-lg text-sm ${themeB} ${
                       themeB === '' && !isGood
                         ? ' hover:text-sky-500 hover:border-sky-500'
                         : ''
@@ -234,7 +235,7 @@ const Quiz = (quiz: QuizType) => {
                 <div
                   onClick={(e) => answerCHandler(e, question.answerCorrect)}
                   className={clsx(
-                    `font-bold text-center w-full text-white lg:text-lg text-sm  ${themeC} ${
+                    `font-bold text-center w-full  lg:text-lg text-sm  ${themeC} ${
                       themeC === '' && !isGood
                         ? ' hover:text-sky-500 hover:border-sky-500'
                         : ''
@@ -246,7 +247,7 @@ const Quiz = (quiz: QuizType) => {
                 <div
                   onClick={(e) => answerDHandler(e, question.answerCorrect)}
                   className={clsx(
-                    `font-bold text-center text-white w-full lg:text-lg text-sm ${themeD} ${
+                    `font-bold text-center w-full lg:text-lg text-sm ${themeD} ${
                       themeD === '' && !isGood
                         ? ' hover:text-sky-500 hover:border-sky-500'
                         : ''

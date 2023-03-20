@@ -183,7 +183,7 @@ const Quiz = (quiz: QuizType) => {
   return (
     <>
       <section className='h-full w-full flex flex-col space-y-5 justify-center items-center'>
-        <p className='uppercase font-bold text-white pt-10 text-xl'>
+        <p className='uppercase font-bold pt-10 text-xl'>
           Tienes {puntos} puntos ✨{' '}
         </p>
 

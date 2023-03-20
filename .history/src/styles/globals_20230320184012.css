@@ -43,11 +43,7 @@
   --card-rgb: 180, 185, 188;
   --card-border-rgb: 131, 134, 135;
 
-  --gradient-principal: linear-gradient(
-    180deg,
-    rgba(25, 244, 255, 1) 0%,
-    rgba(7, 42, 159, 1) 100%
-  );
+  --gradient-principal: linear-gradient(180deg, rgba(25,244,255,1) 0%, rgba(7,42,159,1) 100%)
 }
 
 @media (prefers-color-scheme: dark) {
@@ -97,12 +93,8 @@ body {
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: rgb(0, 0, 0);
-  background: linear-gradient(
-    180deg,
-    rgba(0, 0, 0, 1) 20%,
-    rgba(0, 68, 172, 1) 100%
-  );
+  background: rgb(0,0,0);
+background: linear-gradient(180deg, rgba(0,0,0,1) 20%, rgba(0,68,172,1) 100%);
 }
 
 a {
@@ -110,20 +102,12 @@ a {
   text-decoration: none;
 }
 .btn {
-  background: rgb(25, 244, 255);
-  background: linear-gradient(
-    180deg,
-    rgba(25, 244, 255, 1) 0%,
-    rgba(7, 42, 159, 1) 100%
-  );
+  
+background: rgb(25,244,255);
+background: linear-gradient(180deg, rgba(25,244,255,1) 0%, rgba(7,42,159,1) 100%);
 }
 
 .btn-quiz:hover {
-  border-color: var(--gradient-principal);
+ border-color: var(--gradient-principal);
 }
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-    
-  }
-}
+

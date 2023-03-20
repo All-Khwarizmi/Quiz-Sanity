@@ -19,7 +19,7 @@ const page = async () => {
           {data.map((classe) => {
             return (
               <Link key={idGen()} href={`/memo/${classe.title}`}>
-                <div className='h-full border-2 m-0 flex flex-col items-center text-white border-gray-300 rounded-lg'>
+                <div className='h-full border-2 m-0 flex flex-col items-center text-w border-gray-300 rounded-lg'>
                   <Image
                     width={200}
                     height={200}
