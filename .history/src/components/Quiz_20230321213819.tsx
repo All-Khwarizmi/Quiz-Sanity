@@ -114,7 +114,6 @@ const Quiz = (quiz: QuizType) => {
       setThemeA(colors.good);
       setThemeB(colors.bad);
       setThemeC(colors.bad);
-      setThemeD(colors.bad);
       goodToast();
       if (isLast) {
         memoDateUpdateHandler();
@@ -134,7 +133,6 @@ const Quiz = (quiz: QuizType) => {
       setThemeB(colors.good);
       setThemeA(colors.bad);
       setThemeC(colors.bad);
-      setThemeD(colors.bad);
       goodToast();
       if (isLast) {
         memoDateUpdateHandler();

@@ -107,14 +107,11 @@ const Quiz = (quiz: QuizType) => {
   // - updating points in local storage conditionally accordingly to previous points
   // - updating memoDate in local storage conditionally accordingly to previous points
   const answerAHandler = (e: any, correctAnswer: string): void => {
-    if (isGood) return;
+        if (isGood) return;
     let answer = e.target.firstChild.data;
     if (answer === correctAnswer) {
       setIsGood(true);
       setThemeA(colors.good);
-      setThemeB(colors.bad);
-      setThemeC(colors.bad);
-      setThemeD(colors.bad);
       goodToast();
       if (isLast) {
         memoDateUpdateHandler();
@@ -132,9 +129,6 @@ const Quiz = (quiz: QuizType) => {
     if (answer === correctAnswer) {
       setIsGood(true);
       setThemeB(colors.good);
-      setThemeA(colors.bad);
-      setThemeC(colors.bad);
-      setThemeD(colors.bad);
       goodToast();
       if (isLast) {
         memoDateUpdateHandler();
@@ -150,9 +144,6 @@ const Quiz = (quiz: QuizType) => {
     if (answer === correctAnswer) {
       setIsGood(true);
       setThemeC(colors.good);
-      setThemeA(colors.bad);
-      setThemeB(colors.bad);
-      setThemeD(colors.bad);
       goodToast();
       if (isLast) {
         memoDateUpdateHandler();
@@ -168,9 +159,6 @@ const Quiz = (quiz: QuizType) => {
     if (answer === correctAnswer) {
       setIsGood(true);
       setThemeD(colors.good);
-      setThemeA(colors.bad);
-      setThemeB(colors.bad);
-      setThemeC(colors.bad);
       goodToast();
       if (isLast) {
         memoDateUpdateHandler();
