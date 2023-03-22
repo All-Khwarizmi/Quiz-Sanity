@@ -1,1 +1,0 @@
-memo.image.asset.url;
