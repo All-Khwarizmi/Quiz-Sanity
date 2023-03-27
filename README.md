@@ -1,6 +1,9 @@
+# Welcome to Codice 🥶
+Are you ready to ice your code interviews? 🚀
 
-# QuizoO
-**This is a remake of the QuizoO app with Sanity CMS**
+
+<img src="https://ik.imagekit.io/montresor/Recal_docs/quizoo.png?updatedAt=1679913748124" alt="Landing page of Recal" width="500">
+
 
 ### Sanity studio
 [Boucher for sanity boost ](https://www.sanity.io/sonny)
