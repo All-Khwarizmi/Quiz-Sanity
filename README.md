@@ -1,5 +1,5 @@
 # Welcome to QuizoO 🧠
-Hablas español? 🚀
+Hablas español? 🧐
 
 
 <img src="https://ik.imagekit.io/montresor/Recal_docs/quizoo.png?updatedAt=1679913748124" alt="Landing page of Recal" width="500">
