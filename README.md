@@ -16,10 +16,6 @@ Hablas español? 🧐
 
 [Studio customization GUI](https://themer.sanity.build/?preset=rosabel&primary=ed2555;600&transparent=9d8966;600#/movies/desk)
 
-const {theme} = (await import(
-  // @ts-expect-error -- TODO setup themer.d.ts to get correct typings
-  'https://themer.sanity.build/api/hues?preset=rosabel&primary=ed2555;600&transparent=9d8966;600'
-)) as {theme: import('sanity').StudioTheme}
 
 ### Learn GROQ
 [Learn GROQ in 45 minutes ](https://hdoro.dev/learn-groq)
